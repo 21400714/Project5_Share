@@ -28,7 +28,7 @@ public class LoginController {
         if ( loginvo != null ){ // 로그인 성공
             System.out.println("로그인에 성공했습니다.");
             session.setAttribute("login", loginvo);
-            returnURL = "redirect:/board/list";
+            returnURL = "redirect:/book/list";
         } else { // 로그인 실패
             System.out.println("로그인에 실패했습니다.");
             returnURL = "redirect:/login/login";

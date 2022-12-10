@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <typeAliases>
-        <typeAlias alias="board" type="com.example.board.BoardVO" />
+        <typeAlias alias="book" type="com.example.book.BookVO" />
         <typeAlias alias="user" type="com.example.user.UserVO" />
     </typeAliases>
 </configuration>

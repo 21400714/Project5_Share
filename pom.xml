@@ -60,6 +60,11 @@
       <version>RELEASE</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>servlets.com</groupId>
+      <artifactId>cos</artifactId>
+      <version>05Nov2002</version>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
