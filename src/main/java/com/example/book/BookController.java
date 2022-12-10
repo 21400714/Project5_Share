@@ -3,7 +3,6 @@ package com.example.book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -58,13 +57,11 @@ public class BookController {
     }
 
     @RequestMapping(value = "/book/editok", method = RequestMethod.POST)
-    public String editPostOK(/*HttpServletRequest request, */BookVO vo) throws UnsupportedEncodingException {
-        /*
+    public String editPostOK(HttpServletRequest request, BookVO vo) throws UnsupportedEncodingException {
         request.setCharacterEncoding("UTF-8");
         FileUpload upload = new FileUpload();
         vo = upload.uploadPhoto(request);
 
-         */
         int i = bookDAO.updateBook(vo);
         if (i == 0)
             System.out.println("데이터 수정에 실패했습니다.");

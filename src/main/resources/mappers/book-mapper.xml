@@ -9,7 +9,7 @@
 
     <update id="updateBook">
         update book
-        set title=#{title}, writer=#{writer}, publisher=#{publisher}, price=#{price}, pages=#{pages}, sizes=#{sizes}, weight=#{weight}, topic=#{topic}, content=#{content}
+        set photo=#{photo}, title=#{title}, writer=#{writer}, publisher=#{publisher}, price=#{price}, pages=#{pages}, sizes=#{sizes}, weight=#{weight}, topic=#{topic}, content=#{content}
         where sid=#{sid}
     </update>
 

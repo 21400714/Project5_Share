@@ -12,6 +12,8 @@
     <h1>Edit Post</h1>
     <form:form modelAttribute="bookVO" action="../editok" method="post" enctype="multipart/form-data">
         <table id="edit">
+            <tr><td>Photo</td><td><form:input path="photo" type="file" name="photo" />
+                <c:if test="${bookVO.photo ne ''}"><br /><img src="${pageContext.request.contextPath}/upload/${bookVO.photo}" class="photo"></c:if></td></tr>
             <tr><td>Title</td><td><form:input path="title" /></td></tr>
             <tr><td>Writer</td><td><form:input path="writer" /></td></tr>
             <tr><td>Publisher</td><td><form:input path="publisher" /></td></tr>
