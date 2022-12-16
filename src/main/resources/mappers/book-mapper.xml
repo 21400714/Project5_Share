@@ -2,26 +2,25 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Book">
     <insert id="insertBook">
-        insert into text (title, writer, publisher, price, pages, sizes, weight, topic, content)
-        values
-        (#{title}, #{writer}, #{publisher}, #{price}, #{pages}, #{sizes}, #{weight}, #{topic}, #{content})
+        insert into BOOKS (title, writer, publisher, price, pages, sizes, weight, topic, content)
+        values (#{title}, #{writer}, #{publisher}, #{price}, #{pages}, #{sizes}, #{weight}, #{topic}, #{content})
     </insert>
 
     <update id="updateBook">
-        update text
+        update BOOKS
         set title=#{title}, writer=#{writer}, publisher=#{publisher}, price=#{price}, pages=#{pages}, sizes=#{sizes}, weight=#{weight}, topic=#{topic}, content=#{content}
         where sid=#{sid}
     </update>
 
     <delete id="deleteBook">
-        delete from text where sid=#{sid}
+        delete from BOOKS where sid=#{sid}
     </delete>
 
     <select id="getBook" resultType="book">
-        select * from text where sid=#{sid}
+        select * from BOOKS where sid=#{sid}
     </select>
 
     <select id="getBookList" resultType="book">
-        select * from text order by sid desc
+        select * from BOOKS order by sid desc
     </select>
 </mapper>

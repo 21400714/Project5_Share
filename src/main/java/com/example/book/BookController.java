@@ -12,6 +12,11 @@ public class BookController {
     @Autowired
     BookDAO bookDAO;
 
+    @RequestMapping("/")
+    public String home() {
+        return "login";
+    }
+
     @RequestMapping(value = "/book/list", method = RequestMethod.GET)
     public String booklist(Model model) {
         model.addAttribute("list", bookDAO.getBookList());
@@ -58,5 +63,12 @@ public class BookController {
         else
             System.out.println("데이터 삭제에 성공했습니다.");
         return "redirect:../list";
+    }
+
+    @RequestMapping(value = "/book/view/{id}", method = RequestMethod.GET)
+    public String viewPost(@PathVariable("id") int id, Model model) {
+        BookVO bookVO = bookDAO.getBook(id);
+        model.addAttribute("book", bookVO);
+        return "view";
     }
 }

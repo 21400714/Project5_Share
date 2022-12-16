@@ -3,8 +3,10 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
     <style>
         body {font-family: Arial, Helvetica, sans-serif;}
+
         .wrapper {
             display: flex;
             justify-content: center;
@@ -65,10 +67,9 @@
             <input type="password" placeholder="Enter password" id="password" name="password" required>
 
             <button type="submit">Login</button>
+            <button type="button" onclick="location.href='adduser'">Create your account</button><br/>
         </div>
     </form>
 </div>
-
-
 </body>
 </html>

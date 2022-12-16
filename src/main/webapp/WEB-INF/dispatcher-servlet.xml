@@ -20,7 +20,6 @@
     </bean>
 
     <bean id="loginCheckInterceptor" class="com.example.user.LoginCheckInterceptor" />
-
     <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/**"/>

@@ -71,38 +71,32 @@
 	</script>
 </head>
 <body>
-	<h1>Books</h1>
-	<button type="button" class="button button1" onclick="location.href='add'">Add</button>
-	<button type="button" class="button button1" onclick="location.href='../login/logout'">Logout</button><br/>
-	<table id="list" width="90%">
+<h1>Books</h1>
+<button type="button" class="button button1" onclick="location.href='add'">Add</button>
+<button type="button" class="button button1" onclick="location.href='../login/logout'">Logout</button><br/>
+<table id="list" width="90%">
+<tr>
+	<th>INDEX</th>
+	<th>TITLE</th>
+	<th>WRITER</th>
+	<th>PUBLISHER</th>
+	<th>PRICE</th>
+	<th>REGISTER DATE</th>
+	<th colspan="3">MENU</th>
+</tr>
+<c:forEach items="${list}" var="u" varStatus="status">
 	<tr>
-		<th>INDEX</th>
-		<th>TITLE</th>
-		<th>WRITER</th>
-		<th>PUBLISHER</th>
-		<th>PRICE</th>
-		<th>REGISTER DATE</th>
-		<th colspan="3">MENU</th>
+		<td>${fn:length(list)-status.index}</td>
+		<td>${u.title}</td>
+		<td>${u.writer}</td>
+		<td>${u.publisher}</td>
+		<td>${u.price}</td>
+		<td>${u.regdate}</td>
+		<td><a class="fas fa-eye" href="view/${u.sid}"></a></td>
+		<td><a class="fas fa-edit" href="editform/${u.sid}"></a></td>
+		<td><a class="fas fa-trash" href="javascript:delete_ok('${u.sid}')"></a></td>
 	</tr>
-	<c:forEach items="${list}" var="u" varStatus="status">
-		<tr>
-			<td>${fn:length(list)-status.index}</td>
-			<td>${u.title}</td>
-			<td>${u.writer}</td>
-			<td>${u.publisher}</td>
-			<td>${u.price}</td>
-			<td>${u.regdate}</td>
-			<td><a class="fas fa-eye" href="view/${u.sid}"></a></td>
-			<td><a class="fas fa-edit" href="editform/${u.sid}"></a></td>
-			<td><a class="fas fa-trash" href="javascript:delete_ok('${u.sid}')"></a></td>
-		</tr>
-	</c:forEach>
-	</table><br/>
-	<!--
-	<button type="button" class="btn btn-default" onclick="location.href='add'">Add</button>
-	<button type="button" class="btn btn-default" onclick="location.href='../login/logout'">Logout</button>
-	-->
-
-
+</c:forEach>
+</table><br/>
 </body>
 </html>

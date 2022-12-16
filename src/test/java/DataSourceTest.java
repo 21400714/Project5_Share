@@ -1,14 +1,12 @@
-import java.sql.Connection;
-import java.sql.SQLException;
-import javax.sql.DataSource;
-import javax.xml.crypto.Data;
-
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
-public class DataSourceTest {
+import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.SQLException;
 
+public class DataSourceTest {
     @Test
     public void testConnection() {
         ApplicationContext ctx =
