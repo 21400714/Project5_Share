@@ -4,7 +4,6 @@ import java.util.Date;
 
 public class BookVO {
     private int sid;
-    private String photo;
     private String title;
     private String writer;
     private String publisher;
@@ -22,14 +21,6 @@ public class BookVO {
 
     public void setSid(int sid) {
         this.sid = sid;
-    }
-
-    public String getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(String photo) {
-        this.photo = photo;
     }
 
     public String getTitle() {

@@ -1,12 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false" %>
-<%@ page import="com.example.book.BookDAO, com.example.book.BookVO, java.util.*" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>Board</title>
+	<title>Books</title>
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 	<style>
 		#list {
@@ -14,27 +13,55 @@
 			border-collapse: collapse;
 			width: 100%;
 		}
+
 		#list td, #list th {
 			border: 1px solid #ddd;
 			padding: 8px;
 			text-align:center;
 		}
+
 		#list tr:nth-child(even){background-color: #f2f2f2;}
+
 		#list tr:hover {background-color: #ddd;}
+
 		#list th {
 			padding-top: 12px;
 			padding-bottom: 12px;
 			text-align: center;
-			background-color: #006bb3;
+			background-color: #4CAF50;
 			color: white;
 		}
+
 		.fas {
 			color: black;
 			font-size: 28px;
 		}
+
 		a {
 			text-decoration-line: none;
 		}
+
+		.button {
+			background-color: #4CAF50; /* Green */
+			border: none;
+			color: white;
+			padding: 8px 16px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			transition-duration: 0.4s;
+			cursor: pointer;
+		}
+
+		.button1 {
+			background-color: white;
+			color: black;
+			border: 2px solid #e7e7e7;
+		}
+
+		.button1:hover {background-color: #e7e7e7;}
 	</style>
 	<script>
 		function delete_ok(id){
@@ -44,11 +71,12 @@
 	</script>
 </head>
 <body>
-	<h1>자유게시판</h1>
+	<h1>Books</h1>
+	<button type="button" class="button button1" onclick="location.href='add'">Add</button>
+	<button type="button" class="button button1" onclick="location.href='../login/logout'">Logout</button><br/>
 	<table id="list" width="90%">
 	<tr>
 		<th>INDEX</th>
-		<th>PHOTO</th>
 		<th>TITLE</th>
 		<th>WRITER</th>
 		<th>PUBLISHER</th>
@@ -58,8 +86,7 @@
 	</tr>
 	<c:forEach items="${list}" var="u" varStatus="status">
 		<tr>
-			<td>${u.sid}</td>
-			<td><img src="${pageContext.request.contextPath}/upload/${u.photo}"></td>
+			<td>${fn:length(list)-status.index}</td>
 			<td>${u.title}</td>
 			<td>${u.writer}</td>
 			<td>${u.publisher}</td>
@@ -71,7 +98,11 @@
 		</tr>
 	</c:forEach>
 	</table><br/>
-	<button type="button" onclick="location.href='add'">등록하기</button>
-	<button type="button" onclick="location.href='../login/logout'">로그아웃</button>
+	<!--
+	<button type="button" class="btn btn-default" onclick="location.href='add'">Add</button>
+	<button type="button" class="btn btn-default" onclick="location.href='../login/logout'">Logout</button>
+	-->
+
+
 </body>
 </html>
